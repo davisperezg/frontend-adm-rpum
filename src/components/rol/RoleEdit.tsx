@@ -157,7 +157,7 @@ const RoleEdit = ({ handleClose, open, roleId }: Props) => {
   }, [data, dataAccess]);
 
   const loadRes = useCallback(() => {
-    if (role.name === rolSA) {
+    if (data?.name === rolSA) {
       if (resources) {
         const findRes: any[] = [];
         resources.filter((a: any) => {
@@ -186,7 +186,7 @@ const RoleEdit = ({ handleClose, open, roleId }: Props) => {
     } else {
       setResToList(resources);
     }
-  }, [role.name, resources]);
+  }, [data?.name, resources]);
 
   useEffect(() => {
     loadRole();
